@@ -1,0 +1,32 @@
+<div class="page-header">
+  <%= link_to employees_path, :class => 'btn' do %>
+    <i class="icon-list-alt"></i>
+    Back
+  <% end %>
+  <%= link_to edit_employee_path(@employee), :class => 'btn btn-primary' do %>
+    <i class="icon-pencil icon-white"></i>
+    Edit
+  <% end %>
+  <h1>Listing employees</h1>
+</div>
+
+<dl>
+  <dt>Employeename:</dt>
+  <dd><%= @employee.employeename %></dd>
+
+  <dt>Designation:</dt>
+  <dd><%= @employee.designation %></dd>
+
+  <dt>Email:</dt>
+  <dd><%= @employee.email %></dd>
+
+  <dt>Description:</dt>
+  <dd><%= @employee.description %></dd>
+
+  <dt>Salary:</dt>
+  <dd><%= @employee.salary %></dd>
+
+  <dt>Active:</dt>
+  <dd><%= @employee.active %></dd>
+
+</dl>

@@ -1,0 +1,46 @@
+<div class="page-header">
+  <%= link_to new_employee_path, :class => 'btn btn-primary' do %>
+    <i class="icon-plus icon-white"></i>
+    New Employee
+  <% end %>
+  <h1>Listing employees</h1>
+</div>
+<div>
+<%=search_form_for @q do |f|%>
+<%=f.label  "Employee Name"%>  <%=f.text_field :employeename_cont%>
+<%=f.submit "Search"%>
+<%end%>
+
+ </div>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Employeename</th>
+      <th>Designation</th>
+      <th>Email</th>
+      <th>Description</th>
+      <th>Salary</th>
+      <th>Active</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+<% @employees.each do |employee| %>
+    <tr>
+      <td><%= employee.employeename %></td>
+      <td><%= employee.designation %></td>
+      <td><%= employee.email %></td>
+      <td><%= employee.description %></td>
+      <td><%= employee.salary %></td>
+      <td><%= employee.active %></td>
+      <td><%= link_to 'Show', employee %></td>
+      <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
+      <td><%= link_to 'Destroy', employee, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+<% end %>
+  </tbody>
+</table>

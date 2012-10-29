@@ -1,0 +1,16 @@
+<%= simple_form_for(@employee, :defaults => { :input_html => { :class => 'input-xlarge' } }) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :employeename %>
+    <%= f.input :designation %>
+    <%= f.input :email %>
+    <%= f.input :description %>
+    <%= f.input :salary %>
+    <%= f.input :active %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, :class => "btn-primary" %>
+  </div>
+<% end %>
